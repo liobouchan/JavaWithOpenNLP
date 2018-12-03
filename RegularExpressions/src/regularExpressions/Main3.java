@@ -19,7 +19,7 @@ public class Main3 {
 				"(53) Anexo 3434. Cuenta 7.\r\n" + //
 				"(53) Anexo 3 , Cuenta 8.";
 
-		Pattern pattern = Pattern.compile("(Anexo )(\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis( \\p{Digit})*)");
+		Pattern pattern = Pattern.compile("(Anexo )(\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*");
 		Matcher matcher = pattern.matcher(parrafo);
 
 		int apuntador = 0;
@@ -34,7 +34,9 @@ public class Main3 {
 			System.out.println(" Numero de Grupos " + matcher.groupCount());
 			System.out.println(" GRUPO 1 " + matcher.group(0));
 			System.out.println(" GRUPO 2 " + matcher.group(1));
-			System.out.println(" GRUPO 2 " + matcher.group(2));
+			System.out.println(" GRUPO 3 " + matcher.group(2));
+			System.out.println(" GRUPO 4 " + matcher.group(3));
+			System.out.println(" GRUPO 5 " + matcher.group(4));
 			System.out.println(" Apuntador 2: " + apuntador );
 		}
 	}
