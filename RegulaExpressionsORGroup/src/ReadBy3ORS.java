@@ -19,7 +19,7 @@ public class ReadBy3ORS {
 				"(53) Anexo 3434. Cuenta 7.\r\n" + //
 				"(53) Anexo 3 , Cuenta 8.";
 
-		Pattern pattern = Pattern.compile("(Anexo )(\\p{Digit}*\\p{Digit}\\-[A-Z]( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
+		Pattern pattern = Pattern.compile("(Anexo )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
 		Matcher matcher = pattern.matcher(parrafo);
 
 		int apuntador = 0;
@@ -28,15 +28,14 @@ public class ReadBy3ORS {
 			System.out.println("Apuntador 1: " + apuntador );
 			System.out.println("Start "+ matcher.start());
 			System.out.println("End: "+ matcher.end());
-			apuntador = matcher.end();
 			System.out.println("Anexo: " + matcher.group());
-			//System.out.println("Contenido:"+ parrafo.substring(matcher.end()).trim());
-			System.out.println(" Numero de Grupos " + matcher.groupCount());
-			System.out.println(" GRUPO 1 " + matcher.group(0));
-			System.out.println(" GRUPO 2 " + matcher.group(1));
-			System.out.println(" GRUPO 2 " + matcher.group(2));
-			System.out.println(" GRUPO 2 " + matcher.group(3));
-			System.out.println(" Apuntador 2: " + apuntador );
+			
+			for (int i = 0; i <= matcher.groupCount(); i++) {
+				System.out.println(" Grupo " + i + " " + matcher.group(i));
+			}
+			
+			apuntador = matcher.end();
+			System.out.println("Apuntador 2: " + apuntador );
 		}
 	}
 
