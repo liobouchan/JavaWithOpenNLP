@@ -17,7 +17,7 @@ public class ReadBy3ORS {
 				"(53) Anexo 3434. Cuenta 7.\r\n" + //
 				"(53) Anexo 3 , Cuenta 8.";
 
-		Pattern pattern = Pattern.compile("(Anexo )(\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
+		Pattern pattern = Pattern.compile("(Anexo )(\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit}|(\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis( \\p{Digit})*))");
 		Matcher matcher = pattern.matcher(parrafo);
 
 		int apuntador = 0;
