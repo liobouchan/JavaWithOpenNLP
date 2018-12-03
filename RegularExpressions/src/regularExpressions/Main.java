@@ -22,7 +22,7 @@ public class Main {
 		int apuntador = 0;
 
 		while (matcher.find(apuntador)) {
-			System.out.println("Apuntador 1: " + apuntador );
+			System.out.println("Apuntador1 1: " + apuntador );
 			System.out.println("Start "+ matcher.start());
 			System.out.println("End: "+ matcher.end());
 			apuntador = matcher.end();
@@ -31,8 +31,8 @@ public class Main {
 			System.out.println(" Numero de Grupos " + matcher.groupCount());
 			System.out.println(" GRUPO 1 " + matcher.group(0));
 			System.out.println(" GRUPO 2 " + matcher.group(1));
-			System.out.println(" GRUPO 2 " + matcher.group(2));
-			System.out.println(" Apuntador 2: " + apuntador );
+			System.out.println(" GRUPO 3 " + matcher.group(2));
+			System.out.println(" Apuntador1 2: " + apuntador );
 		}
 
 		Pattern pattern2 = Pattern.compile("(Anexos )(\\p{Digit}*\\p{Digit})( y )(\\p{Digit}*\\p{Digit})");
@@ -41,7 +41,7 @@ public class Main {
 		int apuntador2 = 0;
 
 		while (matcher2.find(apuntador2)) {
-			System.out.println("Apuntador 1: " + apuntador2 );
+			System.out.println("Apuntador2 1: " + apuntador2 );
 			System.out.println("Start "+ matcher2.start());
 			System.out.println("End: "+ matcher2.end());
 			apuntador2 = matcher2.end();
@@ -50,8 +50,10 @@ public class Main {
 			System.out.println("Numero de Grupos " + matcher2.groupCount());
 			System.out.println("GRUPO 1 " + matcher2.group(0));
 			System.out.println("GRUPO 2 " + matcher2.group(1));
-			System.out.println("GRUPO 2 " + matcher2.group(2));
-			System.out.println("Apuntador 2: " + apuntador2 );
+			System.out.println("GRUPO 3 " + matcher2.group(2));
+			System.out.println("GRUPO 4 " + matcher2.group(3));
+			System.out.println("GRUPO 5 " + matcher2.group(4));
+			System.out.println("Apuntador2 2: " + apuntador2 );
 		}
 	}
 
