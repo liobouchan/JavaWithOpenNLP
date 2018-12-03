@@ -10,6 +10,8 @@ public class ReadBy3ORS {
 				"Anexo 3 \r\n" + //
 				"Anexo 1-A \r\n" + //
 				"(53) Anexo 1-B \r\n" + //
+				"(53) Anexo 1-C Bis. \r\n" + //
+				"(53) Anexo 1-D Bis 1. \r\n" + //
 				"(53) Anexo 23. \r\n" + //
 				"(53) Anexo 2. \r\n" + //
 				"(53) Anexos 2 y 5 \r\n" + //
@@ -17,7 +19,7 @@ public class ReadBy3ORS {
 				"(53) Anexo 3434. Cuenta 7.\r\n" + //
 				"(53) Anexo 3 , Cuenta 8.";
 
-		Pattern pattern = Pattern.compile("(Anexo )(\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit}|(\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis( \\p{Digit})*))");
+		Pattern pattern = Pattern.compile("(Anexo )(\\p{Digit}*\\p{Digit}\\-[A-Z]( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
 		Matcher matcher = pattern.matcher(parrafo);
 
 		int apuntador = 0;
@@ -33,6 +35,7 @@ public class ReadBy3ORS {
 			System.out.println(" GRUPO 1 " + matcher.group(0));
 			System.out.println(" GRUPO 2 " + matcher.group(1));
 			System.out.println(" GRUPO 2 " + matcher.group(2));
+			System.out.println(" GRUPO 2 " + matcher.group(3));
 			System.out.println(" Apuntador 2: " + apuntador );
 		}
 	}
