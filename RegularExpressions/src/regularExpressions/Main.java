@@ -40,7 +40,7 @@ public class Main {
 
 		int apuntador2 = 0;
 
-		while (matcher2.find(apuntador)) {
+		while (matcher2.find(apuntador2)) {
 			System.out.println("Apuntador 1: " + apuntador2 );
 			System.out.println("Start "+ matcher2.start());
 			System.out.println("End: "+ matcher2.end());
