@@ -3,6 +3,9 @@ import java.util.regex.Pattern;
 
 public class main {
 
+	private final static String LINE_IDENTIFIER = "\\r?\\n";
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// TODO Auto-generated method stub
@@ -12,23 +15,27 @@ public class main {
 				"(53) Esto es una pequeña linea 2 \r\n" + //
 				"(53) Anexo 3 , Cuenta 8.";
 		String posibleAnexo = "";
-		
+		String descripcion = "";
 		String lines[] = parrafo.split(LINE_IDENTIFIER);
 		Pattern pattern = Pattern.compile("(Anexo )(\\p{Digit}*\\p{Digit})");
 		String nombreAnexo = "";
-		StringBuilder contenidoAnexo = new StringBuilder();
+		StringBuilder descripcionAnexo = new StringBuilder();
 		
 		for (int i = 0; i < lines.length; i++) {
 			System.out.println("Linea: " + lines[i]);
 			Matcher matcher = pattern.matcher(lines[i]);
-			//int apuntador = 0;
 
 			if(!contex) {
 				if (lines[i].contains("Anexo")) {
 					if (matcher.find()) {
 						nombreAnexo = matcher.group();
 						contex = true;
-						System.out.println("Anexo: " + nombreAnexo);
+						//descripcionAnexo.append(lines[i].substring(matcher.end()).trim().toString().replaceAll("'", "`") + '\n');
+						//if (i < lines.length-1) {
+						//	i++;
+						//}
+						
+						//System.out.println("Anexo: " + nombreAnexo);
 					}
 				}
 			}
@@ -38,38 +45,27 @@ public class main {
 					if (matcher.find()) {
 						posibleAnexo = matcher.group();
 						contex = true;
-						System.out.println("Posible Proximo Anexo: " + posibleAnexo);
+						//System.out.println("Posible Proximo Anexo: " + posibleAnexo);
 					}
 					if (!posibleAnexo.equals(nombreAnexo) && posibleAnexo.contains("Anexo")){
-						System.out.println("ENTONCES GUARDAR DATOS");
-						//descripcion = obtenerDescripcionDeArticulo(contenidoArticulo);
-
+						//System.out.println("ENTONCES GUARDAR DATOS");
+						descripcion = descripcionAnexo.toString();
+						System.out.println("Nombre de Anexo: " + nombreAnexo);
+						System.out.println("Descripcion de Anexo: " + descripcionAnexo);
+						
 						//neo4j.crearArticulo(nombreArticulo.replaceAll(" ", ""), nombreArticulo, descripcion,
 						//		contenidoArticulo.toString());
-						contenidoAnexo.setLength(0);
+						descripcionAnexo.setLength(0);
 						contex = false;
 						i--;
-					}else {
-						System.out.println("Hacer un append");
+					}
+					else {
+						descripcionAnexo.append(lines[i].replaceAll("'", "`") + '\n');
 					}
 				}else {
-					System.out.println("Hacer un append");
+					descripcionAnexo.append(lines[i].replaceAll("'", "`") + '\n');
 				}
 			}
-			
-			//System.out.println("MATCHER . FIND = " + matcher.find());
-			//if (matcher.find()) {
-				//System.out.println("Apuntador 1: " + apuntador );
-				//System.out.println("Start "+ matcher.start());
-				//System.out.println("End: "+ matcher.end());
-				//apuntador = matcher.end();
-				//System.out.println("Anexo: " + matcher.group());
-				//System.out.println("Contenido:"+ lines[i].substring(matcher.end()).trim());
-				//System.out.println(" ");
-				//System.out.println("Apuntador 2: " + apuntador );
-			//}
 		}
 	}
 	}
-
-}
