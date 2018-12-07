@@ -21,16 +21,16 @@ public class main {
 				"(53) Esto es una pequeña linea 2-2 \r\n" + //
 				"(53) Esto es una pequeña linea 3-3 \r\n" + //
 				"(53) Esto es una pequeña linea 4-4 \r\n" + //
-		"(53) Anexo 4 , Cuenta 8." + //
-		"(53) Esto es una pequeña linea 1-1 \r\n" + //
-		"(53) Esto es una pequeña linea 2-2 \r\n" + //
-		"(53) Esto es una pequeña linea 3-3 \r\n" + //
-		"(53) Esto es una pequeña linea 4-4 \r\n" + //
-		"(53) Anexo 5 , Cuenta 8." + //
-		"(53) Esto es una pequeña linea 1-1 \r\n" + //
-		"(53) Esto es una pequeña linea 2-2 \r\n" + //
-		"(53) Esto es una pequeña linea 3-3 \r\n" + //
-		"(53) Esto es una pequeña linea 4-4 \r\n" ;
+				"(53) Anexo 4 , Cuenta 8." + //
+				"(53) Esto es una pequeña linea 1-1 \r\n" + //
+				"(53) Esto es una pequeña linea 2-2 \r\n" + //
+				"(53) Esto es una pequeña linea 3-3 \r\n" + //
+				"(53) Esto es una pequeña linea 4-4 \r\n" + //
+				"(53) Anexo 5 , Cuenta 8." + //
+				"(53) Esto es una pequeña linea 1-1 \r\n" + //
+				"(53) Esto es una pequeña linea 2-2 \r\n" + //
+				"(53) Esto es una pequeña linea 3-3 \r\n" + //
+				"(53) Esto es una pequeña linea 4-4 \r\n" ;
 		String posibleAnexo = "";
 		String descripcion = "";
 		String lines[] = parrafo.split(LINE_IDENTIFIER);
