@@ -55,7 +55,7 @@ public class main {
 				if (lines[i].contains("Anexo")) {
 					if (matcher.find()) {
 						posibleAnexo = matcher.group();
-						contex = true;
+						//contex = true;
 					}
 					if (!posibleAnexo.equals(nombreAnexo) && posibleAnexo.contains("Anexo")){
 						descripcion = descripcionAnexo.toString();
@@ -77,6 +77,6 @@ public class main {
 			}
 		}
 		System.out.println("Anexo: " + nombreAnexo);
-		System.out.println("Contrnido : " + descripcionAnexo);
+		System.out.println("Contrnido : " + descripcionAnexo.toString());
 	}
 	}
