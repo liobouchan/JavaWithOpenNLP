@@ -8,12 +8,29 @@ public class main {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
 		boolean contex = false;
 		String parrafo = "(53) Anexo 1 Esto es una pequeña pruebita \r\n" + //
 				"(53) Esto es una pequeña linea 1 \r\n" + //
 				"(53) Esto es una pequeña linea 2 \r\n" + //
-				"(53) Anexo 3 , Cuenta 8.";
+				"(53) Esto es una pequeña linea 3 \r\n" + //
+				"(53) Esto es una pequeña linea 4 \r\n" + //
+				"(53) Esto es una pequeña linea 5 \r\n" + //
+				"(53) Esto es una pequeña linea 6 \r\n" + //
+				"(53) Anexo 3 , Cuenta 8." + //
+				"(53) Esto es una pequeña linea 1-1 \r\n" + //
+				"(53) Esto es una pequeña linea 2-2 \r\n" + //
+				"(53) Esto es una pequeña linea 3-3 \r\n" + //
+				"(53) Esto es una pequeña linea 4-4 \r\n" + //
+		"(53) Anexo 4 , Cuenta 8." + //
+		"(53) Esto es una pequeña linea 1-1 \r\n" + //
+		"(53) Esto es una pequeña linea 2-2 \r\n" + //
+		"(53) Esto es una pequeña linea 3-3 \r\n" + //
+		"(53) Esto es una pequeña linea 4-4 \r\n" + //
+		"(53) Anexo 5 , Cuenta 8." + //
+		"(53) Esto es una pequeña linea 1-1 \r\n" + //
+		"(53) Esto es una pequeña linea 2-2 \r\n" + //
+		"(53) Esto es una pequeña linea 3-3 \r\n" + //
+		"(53) Esto es una pequeña linea 4-4 \r\n" ;
 		String posibleAnexo = "";
 		String descripcion = "";
 		String lines[] = parrafo.split(LINE_IDENTIFIER);
@@ -30,12 +47,6 @@ public class main {
 					if (matcher.find()) {
 						nombreAnexo = matcher.group();
 						contex = true;
-						//descripcionAnexo.append(lines[i].substring(matcher.end()).trim().toString().replaceAll("'", "`") + '\n');
-						//if (i < lines.length-1) {
-						//	i++;
-						//}
-						
-						//System.out.println("Anexo: " + nombreAnexo);
 					}
 				}
 			}
@@ -45,10 +56,8 @@ public class main {
 					if (matcher.find()) {
 						posibleAnexo = matcher.group();
 						contex = true;
-						//System.out.println("Posible Proximo Anexo: " + posibleAnexo);
 					}
 					if (!posibleAnexo.equals(nombreAnexo) && posibleAnexo.contains("Anexo")){
-						//System.out.println("ENTONCES GUARDAR DATOS");
 						descripcion = descripcionAnexo.toString();
 						System.out.println("Nombre de Anexo: " + nombreAnexo);
 						System.out.println("Descripcion de Anexo: " + descripcionAnexo);
@@ -67,5 +76,7 @@ public class main {
 				}
 			}
 		}
+		System.out.println("Anexo: " + nombreAnexo);
+		System.out.println("Contrnido : " + descripcionAnexo);
 	}
 	}
