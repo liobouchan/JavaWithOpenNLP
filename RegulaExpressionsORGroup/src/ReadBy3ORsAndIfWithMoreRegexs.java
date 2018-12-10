@@ -19,7 +19,7 @@ public class ReadBy3ORsAndIfWithMoreRegexs {
 				"(53) Anexos 1-R o 2-T \r\n" + //
 				"(53) Anexos 1-R Bis o 2-T Bis 5 \r\n" + //
 				"(53) Anexo 4 , Cuenta 8.";
-
+		String nombre;
 		Pattern pattern = Pattern.compile("(Anexo )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
 		Pattern pattern2 = Pattern.compile("(Anexos )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})( y )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
 		Pattern pattern3 = Pattern.compile("(Anexos )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})( o )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
@@ -30,16 +30,27 @@ public class ReadBy3ORsAndIfWithMoreRegexs {
 
 		while (matcher.find()) {
 			System.out.println("Anexo: " + matcher.group());
+			nombre = matcher.group();
 			//Relacionar
 		}
 
 		while (matcher2.find()) {
 			System.out.println("Anexo: " + matcher2.group());
+			String[] separate = matcher2.group().split("y");
+			String firstAnnexe = (separate[0].replaceAll("Anexos", "Anexo")).trim();
+			String secondAnnexe = ("Anexo " + separate[1].trim()).trim();
+			System.out.println("  " + firstAnnexe);
+			System.out.println("  " + secondAnnexe);
 			//Relacionar
 		}
 		
 		while (matcher3.find()) {
 			System.out.println("Anexo: " + matcher3.group());
+			String[] separate = matcher3.group().split(" o ");
+			String firstAnnexe = (separate[0].replaceAll("Anexos", "Anexo")).trim();
+			String secondAnnexe = ("Anexo " + separate[1].trim()).trim();
+			System.out.println("  " + firstAnnexe);
+			System.out.println("  " + secondAnnexe);
 			//Relacionar
 		}
 	}
