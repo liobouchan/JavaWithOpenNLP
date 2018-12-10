@@ -30,14 +30,17 @@ public class ReadBy3ORsAndIfWithMoreRegexs {
 
 		while (matcher.find()) {
 			System.out.println("Anexo: " + matcher.group());
+			//Relacionar
 		}
 
 		while (matcher2.find()) {
 			System.out.println("Anexo: " + matcher2.group());
+			//Relacionar
 		}
 		
 		while (matcher3.find()) {
 			System.out.println("Anexo: " + matcher3.group());
+			//Relacionar
 		}
 	}
 
