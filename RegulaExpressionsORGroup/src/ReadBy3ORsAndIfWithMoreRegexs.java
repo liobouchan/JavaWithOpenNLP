@@ -18,8 +18,7 @@ public class ReadBy3ORsAndIfWithMoreRegexs {
 				"(53) Anexos 1-R Bis y 2-T Bis 2 \r\n" + //
 				"(53) Anexos 1-R o 2-T \r\n" + //
 				"(53) Anexos 1-R Bis o 2-T Bis 5 \r\n" + //
-				"(53) Anexo 3434. Cuenta 7.\r\n" + //
-				"(53) Anexo 3 , Cuenta 8.";
+				"(53) Anexo 4 , Cuenta 8.";
 
 		Pattern pattern = Pattern.compile("(Anexo )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
 		Pattern pattern2 = Pattern.compile("(Anexos )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})( y )((\\p{Digit}*\\p{Digit}\\-[A-Z])( Bis)( \\p{Digit})*|\\p{Digit}*\\p{Digit}\\-\\p{Upper}|\\p{Digit}*\\p{Digit})");
@@ -29,50 +28,16 @@ public class ReadBy3ORsAndIfWithMoreRegexs {
 		Matcher matcher2 = pattern2.matcher(parrafo);
 		Matcher matcher3 = pattern3.matcher(parrafo);
 
-		int apuntador = 0;
-		int apuntador2 = 0;
-		int apuntador3 = 0;
-
-		while (matcher.find(/*apuntador*/)) {
-			//System.out.println("Apuntador 1: " + apuntador );
-			//System.out.println("Start "+ matcher.start());
-			//System.out.println("End: "+ matcher.end());
+		while (matcher.find()) {
 			System.out.println("Anexo: " + matcher.group());
-			
-			//for (int i = 0; i <= matcher.groupCount(); i++) {
-			//	System.out.println(" Grupo " + i + " " + matcher.group(i));
-			//}
-			
-			//apuntador = matcher.end();
-			//System.out.println("Apuntador 2: " + apuntador );
 		}
 
-		while (matcher2.find(/*apuntador2*/)) {
-			//System.out.println("Apuntador 1: " + apuntador );
-			//System.out.println("Start "+ matcher.start());
-			//System.out.println("End: "+ matcher.end());
+		while (matcher2.find()) {
 			System.out.println("Anexo: " + matcher2.group());
-			
-			//for (int i = 0; i <= matcher.groupCount(); i++) {
-			//	System.out.println(" Grupo " + i + " " + matcher.group(i));
-			//}
-			
-			//apuntador = matcher.end();
-			//System.out.println("Apuntador 2: " + apuntador );
 		}
 		
-		while (matcher3.find(/*apuntador2*/)) {
-			//System.out.println("Apuntador 1: " + apuntador );
-			//System.out.println("Start "+ matcher.start());
-			//System.out.println("End: "+ matcher.end());
+		while (matcher3.find()) {
 			System.out.println("Anexo: " + matcher3.group());
-			
-			//for (int i = 0; i <= matcher.groupCount(); i++) {
-			//	System.out.println(" Grupo " + i + " " + matcher.group(i));
-			//}
-			
-			//apuntador = matcher.end();
-			//System.out.println("Apuntador 2: " + apuntador );
 		}
 	}
 
