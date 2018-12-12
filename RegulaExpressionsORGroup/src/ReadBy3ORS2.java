@@ -26,18 +26,18 @@ public class ReadBy3ORS2 {
 
 		int apuntador = 0;
 
-		while (matcher.find(apuntador)) {
-			System.out.println("Apuntador 1: " + apuntador );
-			System.out.println("Start "+ matcher.start());
-			System.out.println("End: "+ matcher.end());
+		while (matcher.find()) {
+			//System.out.println("Apuntador 1: " + apuntador );
+			//System.out.println("Start "+ matcher.start());
+			//System.out.println("End: "+ matcher.end());
 			System.out.println("Anexo: " + matcher.group());
 			
-			for (int i = 0; i <= matcher.groupCount(); i++) {
-				System.out.println(" Grupo " + i + " " + matcher.group(i));
-			}
+			//for (int i = 0; i <= matcher.groupCount(); i++) {
+			//	System.out.println(" Grupo " + i + " " + matcher.group(i));
+			//}
 			
-			apuntador = matcher.end();
-			System.out.println("Apuntador 2: " + apuntador );
+			//apuntador = matcher.end();
+			//System.out.println("Apuntador 2: " + apuntador );
 		}
 	}
 
