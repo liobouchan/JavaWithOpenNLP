@@ -18,10 +18,11 @@ public class ReadBy3ORS2 {
 				"Artículo 77 Bis 1 \r\n" + //
 				"Artículo 88 Bis 22 \r\n" + //
 				"Artículo 99 Bis 33 a \r\n" + //
+				"Artículo 99 Bis 33 y \r\n" + //
 				"Artículo 11 Bis 4 a \r\n" + //
 				"Artículo 22 Bis 2 z \r\n";
 
-		Pattern pattern = Pattern.compile("(Artículo )(\\p{Digit}*\\p{Digit})( Bis )*(\\p{Digit}*\\p{Digit})*( \\p{Lower})*");
+		Pattern pattern = Pattern.compile("(Artículo )(\\p{Digit}*\\p{Digit})( Bis )*(\\p{Digit}*\\p{Digit})*( [a-x])*");
 		Matcher matcher = pattern.matcher(parrafo);
 
 		int apuntador = 0;
