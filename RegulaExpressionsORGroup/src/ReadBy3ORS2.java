@@ -20,19 +20,29 @@ public class ReadBy3ORS2 {
 				"Artículo 99 Bis 33 a \r\n" + //
 				"Artículo 99 Bis 33 y \r\n" + //
 				"Artículo 11 Bis 4 a \r\n" + //
+				"Artículo 11 Bis 4 o Bla bla bla basura \r\n" + //
 				"Artículo 22 Bis 2 z \r\n";
 
-		Pattern pattern = Pattern.compile("(Artículo )(\\p{Digit}*\\p{Digit})( Bis )*(\\p{Digit}*\\p{Digit})*( [a-x])*");
+		Pattern pattern = Pattern.compile("(Artículo )(\\p{Digit}*\\p{Digit})( Bis )*(\\p{Digit}*\\p{Digit})*( [a-x] )*");
 		Matcher matcher = pattern.matcher(parrafo);
 
+		//Pattern pattern2 = Pattern.compile("(Artículo )(\\p{Digit}*\\p{Digit})( Bis )*(\\p{Digit}*\\p{Digit})*( o )");
+		
+		
 		int apuntador = 0;
 
 		while (matcher.find()) {
 			//System.out.println("Apuntador 1: " + apuntador );
 			//System.out.println("Start "+ matcher.start());
 			//System.out.println("End: "+ matcher.end());
-			System.out.println("Anexo: " + matcher.group());
-			
+			System.out.println("Artículo: " + matcher.group());
+			//String contenido = parrafo.substring(matcher.end());
+			//System.out.println("Contenido: " + contenido );
+			//String articulito = matcher.group();
+			//Matcher matcher2 = pattern2.matcher(articulito);
+			//if (matcher2.find()) {
+			//	System.out.println("	Este es el que trae el pedo");
+			//}
 			//for (int i = 0; i <= matcher.groupCount(); i++) {
 			//	System.out.println(" Grupo " + i + " " + matcher.group(i));
 			//}
