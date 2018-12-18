@@ -8,27 +8,29 @@ public class ReadBy3ORS2Validation {
 	public static void main(String[] args) {
 
 		String parrafo = "(53) Articulo 1 \r\n" + //
-				"ArtÃ­culo 2 \r\n" + //
-				"ArtÃ­culo 22 \r\n" + //
-				"ArtÃ­culo 1 Bis \r\n" + //
-				"ArtÃ­culo 2 Bis 1 \r\n" + //
-				"ArtÃ­culo 3 Bis 22 \r\n" + //
-				"ArtÃ­culo 4 Bis 22 a \r\n" + //
-				"ArtÃ­culo 5 Bis 2 a \r\n" + //
-				"ArtÃ­culo 66 Bis \r\n" + //
-				"ArtÃ­culo 77 Bis 1 \r\n" + //
-				"ArtÃ­culo 88 Bis 22 \r\n" + //
-				"ArtÃ­culo 99 Bis 33 a \r\n" + //
-				"ArtÃ­culo 99 Bis 33 y \r\n" + //
-				"ArtÃ­culo 11 Bis 4 a \r\n" + //
-				"ArtÃ­culo 11 Bis 4 o Bla bla bla basura \r\n" + //
-				"ArtÃ­culo 11 Bis 4 o Anexo 34-p \r\n" + //
-				"ArtÃ­culo 11 Bis 4 o Anexo 33 \r\n" + //
-				"ArtÃ­culo 11 Bis 4 o Aqui programando bien perro \r\n" + //
-				"ArtÃ­culo 11 Bis 4 o Pues aqui estamos haciendo unas pruebitas chulas \r\n" + //
-				"ArtÃ­culo 22 Bis 2 z \r\n";
+				"Artículo 2 \r\n" + //
+				"Artículo 22 \r\n" + //
+				"Artículo 1 Bis \r\n" + //
+				"Artículo 2 Bis 1 \r\n" + //
+				"Artículo 3 Bis 22 \r\n" + //
+				"Artículo 4 Bis 22 a \r\n" + //
+				"Artículo 5 Bis 2 a \r\n" + //
+				"Artículo 66 Bis \r\n" + //
+				"Artículo 77 Bis 1 \r\n" + //
+				"Artículo 88 Bis 22 \r\n" + //
+				"Artículo 99 Bis 33 a \r\n" + //
+				"Artículo 99 Bis 33 y \r\n" + //
+				"Artículo 11 Bis 4 a \r\n" + //
+				"Artículo 11 Bis 4 o Bla bla bla basura \r\n" + //
+				"Artículo 11 Bis 4 o Anexo 34-p \r\n" + //
+				"Artículo 11 Bis 4 o Anexo 33 \r\n" + //
+				"Artículo 11 Bis 4 o Aqui programando bien perro \r\n" + //
+				"(88) Artículo 2 Bis 18.- En el grupo VII-A se clasificarán: \r\n" + //
+				"(130) Artículo 2 Bis 19.- En el grupo VII-B se clasificarán las Operaciones sujetas a \r\n" + //
+				"Artículo 11 Bis 4 o Pues aqui estamos haciendo unas pruebitas chulas \r\n" + //
+				"Artículo 22 Bis 2 z \r\n";
 
-		Pattern pattern = Pattern.compile("(ArtÃ­culo )(\\p{Digit}*\\p{Digit})( Bis )*(\\p{Digit}*\\p{Digit})*( [a-x] )*");
+		Pattern pattern = Pattern.compile("(Artículo )(\\p{Digit}*\\p{Digit})( Bis )*(\\p{Digit}*\\p{Digit})*( [a-x] )*");
 		String lines[] = parrafo.split(LINE_IDENTIFIER);
 
 		int apuntador = 0;
